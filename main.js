@@ -68,25 +68,25 @@ $(function(){
                 }
                 
                 if(show === true){
-                    $('#total.' + area).text('Total Cases: ' + TOTAL);
-                    $('#active.' + area).text('Active Cases: ' + ACTIVE);
-                    $('#deaths.' + area).text('Deaths: '  + DEATHS);
-                    $('#recovered.' + area).text('Recoveries: ' + RECOVERED);
+                    $('#total.' + area).text('Casos Totales: ' + TOTAL);
+                    $('#active.' + area).text('Casos Activos: ' + ACTIVE);
+                    $('#deaths.' + area).text('Muertes: '  + DEATHS);
+                    $('#recovered.' + area).text('Recuperados: ' + RECOVERED);
                 }
                 
                 else{
-                    alert('Country: ' + area + '\nCases: ' + TOTAL + '\nActive: ' + ACTIVE + '\nDeaths: ' + DEATHS + '\nRecoveries: ' + RECOVERED);
+                    alert('Pais: ' + area + '\nCasos: ' + TOTAL + '\nActivos: ' + ACTIVE + '\nMuertes: ' + DEATHS + '\nRecuperados: ' + RECOVERED);
                     
                 }
             },
             error: function(){
-                alert("There was an error while loading " + area + ".");
+                alert("Error mientras cargaba la pagina " + area + ".");
             }
         });
     }
     
     $('#search').on('click',function(){
-        var country = prompt('Please enter your country:');
+        var country = prompt('Ingresa el pais:');
         if(country !== null && country !== ''){
             getData(country.replace(' ','-'),false);
         }
@@ -100,7 +100,7 @@ $(function(){
             $('#update_time').text(LAST_UPDATE);
         },
         error: function(){
-            alert("There was an error while loading " + area + ".");
+            alert("Error al cargar " + area + ".");
         }
     });
     
@@ -111,6 +111,8 @@ $(function(){
     getData('uk',true);
     getData('china',true);
 });
+
+
 
 
 
